@@ -1,0 +1,3 @@
+{:paths ["src"]
+ :deps {bb-pod-racer/bb-pod-racer {:git/url "git@github.com:justone/bb-pod-racer.git" :sha "ce257edb13d0d477f3ed2598f37816c7cd52b437"}
+        com.taoensso/nippy {:mvn/version "3.2.0"}}}

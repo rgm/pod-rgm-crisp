@@ -1,0 +1,21 @@
+#!/bin/bash
+
+app_name=crisp
+app_ns=${app_name}.main
+
+rm -rf classes && mkdir classes
+clojure -e "(compile '${app_ns})"
+
+native-image \
+    -cp $(clojure -Spath):classes \
+    -H:Name=$app_name \
+    -H:+ReportExceptionStackTraces \
+    -H:ReflectionConfigurationFiles=reflection.json \
+    -H:IncludeResources=VERSION \
+    --initialize-at-build-time \
+    --report-unsupported-elements-at-runtime \
+    --verbose \
+    --no-fallback \
+    --no-server \
+    "-J-Xmx3g" \
+    ${app_ns}
