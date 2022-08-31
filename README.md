@@ -1,3 +1,5 @@
+NB: This is now mainly a minimal demo of how to expose things for Babashka with GraalVM. Use https://github.com/justone/brisk/ instead.
+
 # crisp
 
 Freeze and thaw with [Nippy](https://github.com/ptaoussanis/nippy) from a
